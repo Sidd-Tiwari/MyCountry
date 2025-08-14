@@ -69,8 +69,7 @@
         
 
 
-        /* Desktop/tablet default height */
-        /* All devices */
+ /* All devices default */
 .carousel-inner img {
     width: 100%;
     object-fit: cover;
@@ -80,24 +79,27 @@
 /* Mobile */
 @media (max-width: 576px) {
     .carousel-inner img {
-        height: 35vh; /* One-third of mobile screen */
+        height: 35vh;
     }
 }
 
 /* Tablet */
 @media (min-width: 577px) and (max-width: 991px) {
     .carousel-inner img {
-        height: 50vh; /* Half of tablet screen */
+        height: 50vh;
     }
 }
 
-/* Laptop/Desktop */
+/* Laptop/Desktop - show full image without cropping */
 @media (min-width: 992px) {
     .carousel-inner img {
-        height: clamp(400px, 60vh, 700px); 
-        /* Min 400px, preferred 60% of screen height, max 700px */
+        height: auto;
+        max-height: 700px;  /* limit to avoid being too tall */
+        object-fit: contain; /* show full image with padding if needed */
+        background-color: black; /* optional, fills space around images */
     }
 }
+
 
 
 
@@ -205,6 +207,7 @@
 </body>
 
 </html>
+
 
 
 
