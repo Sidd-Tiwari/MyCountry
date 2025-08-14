@@ -69,12 +69,18 @@
         
 
 
-        /* Carousel images for small screens */
+        .carousel-inner img {
+            height: 400px; /* Desktop/tablet height */
+            object-fit: cover;
+            width: 100%;
+        }
+
         @media (max-width: 576px) {
-            img {
-                height: 250px;
+            .carousel-inner img {
+                height: 250px; /* Mobile height */
             }
         }
+
     </style>
 </head>
 
@@ -179,5 +185,6 @@
 </body>
 
 </html>
+
 
 
