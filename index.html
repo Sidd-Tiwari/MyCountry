@@ -69,17 +69,21 @@
         
 
 
+        /* Desktop/tablet default height */
         .carousel-inner img {
-            height: 400px; /* Desktop/tablet height */
-            object-fit: cover;
+            height: 50vh;            /* Half the screen height */
             width: 100%;
+            object-fit: cover;       /* Fill space without distortion */
+            object-position: center; /* Keep center in focus */
         }
-
+        
+        /* Mobile height adjusts dynamically */
         @media (max-width: 576px) {
             .carousel-inner img {
-                height: 250px; /* Mobile height */
+                height: 35vh; /* About one-third of the mobile screen height */
             }
         }
+
 
     </style>
 </head>
@@ -185,6 +189,7 @@
 </body>
 
 </html>
+
 
 
 
