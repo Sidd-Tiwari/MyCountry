@@ -35,11 +35,6 @@
             width: 100%;
         }
 
-        img {
-            max-height: 400px;
-
-        }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -66,42 +61,46 @@
         p {
             font-size: clamp(1rem, 3vw, 1.2rem);
         }
-        
 
+        /* Carousel section centering */
+        .carousel-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 70vh; /* vertical centering space */
+        }
 
- /* All devices default */
-.carousel-inner img {
+        #indiaCarousel {
+            max-width: 500px; /* desktop max width */
+            width: 100%;
+        }
+
+        <!-- .carousel-inner img {
+            object-fit: contain;
+            background-color: #fefefe00;
+            width: 100%;
+            max-height: 400px;
+        } -->
+
+        .carousel-inner img {
+    height: 500px;       /* fixed height for laptops/desktops */
     width: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-/* Mobile */
-@media (max-width: 576px) {
-    .carousel-inner img {
-        height: 35vh;
-    }
+    object-fit: cover;   /* keeps aspect ratio but crops to fill */
 }
 
 /* Tablet */
-@media (min-width: 577px) and (max-width: 991px) {
+@media (max-width: 1024px) {
     .carousel-inner img {
-        height: 50vh;
+        height: 400px;
     }
 }
 
-/* Laptop/Desktop - show full image without cropping */
-@media (min-width: 992px) {
+/* Mobile */
+@media (max-width: 768px) {
     .carousel-inner img {
-        height: auto;
-        max-height: 700px;  /* limit to avoid being too tall */
-        object-fit: contain; /* show full image with padding if needed */
-        background-color: black; /* optional, fills space around images */
+        height: 250px;
     }
 }
-
-
-
 
     </style>
 </head>
@@ -113,8 +112,8 @@
         </section>
         <p class="text-center fw-bold" style="color:rgb(104, 52, 152)">From Harappa to Independence, explore India’s rich past.</p>
 
-        <section class="container my-5">
-            <div id="indiaCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="500">
+        <section class="carousel-section">
+            <div id="indiaCarousel" class="carousel slide " data-bs-ride="carousel" data-bs-interval="500">
                 <div class="carousel-inner rounded shadow">
                     <div class="carousel-item active">
                         <img src="images/Flag_of_India.svg.webp" class="d-block w-100" alt="India Image 1">
@@ -172,10 +171,10 @@
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#indiaCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon rounded" aria-hidden="true"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#indiaCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon bg-dark rounded" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon rounded" aria-hidden="true"></span>
                 </button>
             </div>
         </section>
@@ -205,11 +204,4 @@
     <!-- Bootstrap JS Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
