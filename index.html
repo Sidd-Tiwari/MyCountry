@@ -70,19 +70,35 @@
 
 
         /* Desktop/tablet default height */
-        .carousel-inner img {
-            height: 50vh;            /* Half the screen height */
-            width: 100%;
-            object-fit: cover;       /* Fill space without distortion */
-            object-position: center; /* Keep center in focus */
-        }
-        
-        /* Mobile height adjusts dynamically */
-        @media (max-width: 576px) {
-            .carousel-inner img {
-                height: 35vh; /* About one-third of the mobile screen height */
-            }
-        }
+        /* All devices */
+.carousel-inner img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .carousel-inner img {
+        height: 35vh; /* One-third of mobile screen */
+    }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 991px) {
+    .carousel-inner img {
+        height: 50vh; /* Half of tablet screen */
+    }
+}
+
+/* Laptop/Desktop */
+@media (min-width: 992px) {
+    .carousel-inner img {
+        height: clamp(400px, 60vh, 700px); 
+        /* Min 400px, preferred 60% of screen height, max 700px */
+    }
+}
+
 
 
     </style>
@@ -189,6 +205,7 @@
 </body>
 
 </html>
+
 
 
 
